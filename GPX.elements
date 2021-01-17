@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectGuid>{BD83C508-387F-486C-B177-6969689226BC}</ProjectGuid>
+    <Mode>Toffee</Mode>
+    <SubMode>iOS</SubMode>
+    <SDK>iOS</SDK>
+    <OutputType>Import</OutputType>
+    <ImportCodeGen>Oxygene</ImportCodeGen>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <OutputPath>.\Bin\Debug</OutputPath>
+    <Optimize>False</Optimize>
+    <GenerateDebugInfo>True</GenerateDebugInfo>
+    <ConditionalDefines>DEBUG;TRACE</ConditionalDefines>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <OutputPath>.\Bin\Release</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="rtl" />
+    <Reference Include="Foundation" />
+    <Reference Include="CoreFoundation" />
+    <Reference Include="CoreGraphics" />
+    <Reference Include="UIKit" />
+    <ImportFramework Include="iOS/GPX.framework">
+      <CopyLocal>True</CopyLocal>
+    </ImportFramework>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\RemObjects Software\Elements\RemObjects.Elements.targets" />
+</Project>
